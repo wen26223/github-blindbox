@@ -23,7 +23,7 @@ jobs:
       - name: 生成摘要
         env:
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
-          ANTHROPIC_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
         run: |
           cat trending-feed.json | node scripts/github-digest.js > /tmp/digest.txt
