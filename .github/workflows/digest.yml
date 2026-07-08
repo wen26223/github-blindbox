@@ -46,6 +46,7 @@ jobs:
         env:
           QQ_EMAIL: ${{ secrets.QQ_EMAIL }}
           QQ_SMTP_AUTH_CODE: ${{ secrets.QQ_SMTP_AUTH_CODE }}
+          NODE_OPTIONS: --dns-result-order=ipv4first
         run: |
           cat /tmp/digest.txt | node scripts/send-email.js \
             --to "$QQ_EMAIL" \
